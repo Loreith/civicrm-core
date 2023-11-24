@@ -39,6 +39,8 @@ class CRM_Upgrade_Incremental_php_FiveSixtyEight extends CRM_Upgrade_Incremental
     $this->addTask('Update civicrm_managed.cleanup', 'alterColumn', 'civicrm_managed', 'cleanup', "varchar(16) NOT NULL DEFAULT 'always' COMMENT 'Policy on when to cleanup entity (always, never, unused)'");
     $this->addTask('Update civicrm_acl.is_active', 'alterColumn', 'civicrm_acl', 'is_active', "tinyint NOT NULL DEFAULT 1 COMMENT 'Is this property active?'");
     $this->addTask('Update civicrm_dashboard_contact.is_active', 'alterColumn', 'civicrm_dashboard_contact', 'is_active', "tinyint NOT NULL DEFAULT 0 COMMENT 'Is this widget active?'");
+    $this->addTask('Add created_date to civicrm_group', 'addColumn', 'civicrm_group', 'created_date', "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Group created date'");
+    $this->addTask('Add created_date to civicrm_group', 'addColumn', 'civicrm_group', 'modified_date', "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CUTTENT_TIMESTAMP COMMENT 'Group last modified date'");
   }
 
 }

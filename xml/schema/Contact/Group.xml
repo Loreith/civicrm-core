@@ -330,4 +330,21 @@
     <default>NULL</default>
     <add>5.31</add>
   </field>
+  <field>
+    <name>created_date</name>
+    <type>timestamp</type>
+    <comment>Group created date</comment>
+    <required>true</required>
+    <default>CURRENT_TIMESTAMP</default>
+    <add>5.68</add>
+  </field>
+  <field>
+    <name>modified_date</name>
+    <type>timestamp</type>
+    <comment>Group last modified date</comment>
+    <required>true</required>
+    <default>CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP</default>
+    <readonly>true</readonly>
+    <add>5.68</add>
+  </field>
 </table>
